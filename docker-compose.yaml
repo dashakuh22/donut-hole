@@ -2,8 +2,8 @@ version: "3.4"
 
 services:
   back:
-    # https://github.com/tairau/php-fpm-alpine PHP v8.0.8
-    image: tairau/php-fpm-alpine:v2.2.3
+    working_dir: /app
+    image: ghcr.io/step3003/php-fpm-alpine:4.1.0
     env_file: ./.env
     environment:
       OPCACHE_VALIDATE_TIMESTAMPS: "1"

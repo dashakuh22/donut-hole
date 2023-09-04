@@ -13,7 +13,7 @@ docker-compose run --rm back composer install
 
 Запускаем
 ```shell
-docker-compose up
+docker-compose up -d
 ```
 
 Создаем базу данных
