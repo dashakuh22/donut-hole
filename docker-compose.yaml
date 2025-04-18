@@ -11,6 +11,8 @@ services:
       - 80:8000
     # Первый можно использовать любой незанятый.
     command: php artisan serve --host 0.0.0.0
+    networks:
+      - database_net
     volumes:
       - ./:/app:cached
 
@@ -19,6 +21,12 @@ services:
     image: postgres:13.2-alpine
     environment:
       POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: backend
     ports:
       - 5432:5432
+    networks:
+      - database_net
     # Если не нужны порты наружу и/или заняты, можно закомментировать.
+
+networks:
+  database_net:
